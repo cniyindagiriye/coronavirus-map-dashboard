@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  position: relative;
+}
+.App-header {
+  top: 0;
+  position: sticky;
+  z-index: 1;
+  background-color: #C4C4C4;
+  height: max-content;
+}
+.App .search{
+  z-index: 1;
+  position: fixed;
+  width: fit-content;
+}
+.App-footer {
+  background-color: #4A4848;
+  color: #E9E7E7;
+}
+.leaflet-container {
+  width: 100%;
+  min-height: 80vh;
+  z-index: 0;
+}
