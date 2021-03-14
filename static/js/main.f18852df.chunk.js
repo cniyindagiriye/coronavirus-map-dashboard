@@ -1,0 +1,2 @@
+(this["webpackJsonpcoronavirus-map-dashboard"]=this["webpackJsonpcoronavirus-map-dashboard"]||[]).push([[0],{10:function(n,r,e){"use strict";e.r(r);var o=e(1),t=e.n(o),a=e(3),c=e.n(a),s=(e(8),e(0));var i=function(){return Object(s.jsx)("div",{className:"container",children:"Hello World"})};c.a.render(Object(s.jsx)(t.a.StrictMode,{children:Object(s.jsx)(i,{})}),document.getElementById("root"))},8:function(n,r,e){}},[[10,1,2]]]);
+//# sourceMappingURL=main.f18852df.chunk.js.map
