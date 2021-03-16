@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/coronavirus-map-dashboard/static/css/main.3bbd20e4.chunk.css",
-    "main.js": "/coronavirus-map-dashboard/static/js/main.db6e75f0.chunk.js",
-    "main.js.map": "/coronavirus-map-dashboard/static/js/main.db6e75f0.chunk.js.map",
+    "main.css": "/coronavirus-map-dashboard/static/css/main.561d6e4a.chunk.css",
+    "main.js": "/coronavirus-map-dashboard/static/js/main.e7b32e42.chunk.js",
+    "main.js.map": "/coronavirus-map-dashboard/static/js/main.e7b32e42.chunk.js.map",
     "runtime-main.js": "/coronavirus-map-dashboard/static/js/runtime-main.cd2da7bf.js",
     "runtime-main.js.map": "/coronavirus-map-dashboard/static/js/runtime-main.cd2da7bf.js.map",
     "static/css/2.c2b0e786.chunk.css": "/coronavirus-map-dashboard/static/css/2.c2b0e786.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.12f59fe9.chunk.js.map": "/coronavirus-map-dashboard/static/js/2.12f59fe9.chunk.js.map",
     "index.html": "/coronavirus-map-dashboard/index.html",
     "static/css/2.c2b0e786.chunk.css.map": "/coronavirus-map-dashboard/static/css/2.c2b0e786.chunk.css.map",
-    "static/css/main.3bbd20e4.chunk.css.map": "/coronavirus-map-dashboard/static/css/main.3bbd20e4.chunk.css.map",
+    "static/css/main.561d6e4a.chunk.css.map": "/coronavirus-map-dashboard/static/css/main.561d6e4a.chunk.css.map",
     "static/js/2.12f59fe9.chunk.js.LICENSE.txt": "/coronavirus-map-dashboard/static/js/2.12f59fe9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.cd2da7bf.js",
     "static/css/2.c2b0e786.chunk.css",
     "static/js/2.12f59fe9.chunk.js",
-    "static/css/main.3bbd20e4.chunk.css",
-    "static/js/main.db6e75f0.chunk.js"
+    "static/css/main.561d6e4a.chunk.css",
+    "static/js/main.e7b32e42.chunk.js"
   ]
 }
