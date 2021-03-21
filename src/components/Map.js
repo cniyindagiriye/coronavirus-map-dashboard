@@ -81,7 +81,7 @@ const Map = (props) => {
   return (
     <div className="App-body relative z-0 bg-red-400">
       <Country />
-      <MapContainer ref={mapRef} center={[0, 0]} zoom={4}>
+      <MapContainer ref={mapRef} center={ [0, 0] } zoom={4}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
       </MapContainer>
     </div>
