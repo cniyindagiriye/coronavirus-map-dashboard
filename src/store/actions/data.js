@@ -18,6 +18,7 @@ export const fetchData = () => (dispatch) => {
     axios.get('https://corona.lmao.ninja/v2/countries')
         .then((response) => {
             dispatch(fetchDataSucces(response.data));
+            return response.data;
         }).catch((error) => {
             dispatch(fetchDataFail(error));
         });
