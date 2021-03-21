@@ -34,8 +34,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  getData: (firstName, lastName, email, password) => 
-  dispatch(fetchData(firstName, lastName, email, password)),
+  getData: () => dispatch(fetchData()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Map);

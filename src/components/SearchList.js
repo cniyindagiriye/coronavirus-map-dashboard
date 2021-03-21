@@ -1,18 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
+import { setCountry } from '../store/actions/country';
 import Search from './Search';
 
 const SearchList = (props) => {
 
     const [state, setstate] = useState('');
 
-    const { dataCountries, search } = props;
+    const { dataCountries, search, setData } = props;
 
     let searchs = useRef(null);
     let countries = useRef(null);
 
     useEffect(() => {
         setstate(search);
+
+        const clickHandler = (dataCountry) => {
+            setData(dataCountry);        
+            setstate('');
+        }
+
         if(dataCountries && search !== '') {
             
             countries.current = dataCountries.filter(dataCountry => {
@@ -21,13 +28,12 @@ const SearchList = (props) => {
                 return to.startsWith(from);
             });
             if(countries.current) {
-                console.log(countries.current);
                 searchs.current = countries.current.map( dataCountry => (
-                    <Search key={dataCountry.country} dataCountry={dataCountry} />
+                    <Search clicked={(data) => clickHandler(data)} key={dataCountry.country} dataCountry={dataCountry} />
                 ));
             }
         }
-    }, [dataCountries, search, state]);
+    }, [dataCountries, search, setData]);
 
     return (
         <div className={ state === '' ? "hidden" : "m-auto flex w-full flex-col items-center md:items-end max-w-4xl"}>
@@ -42,4 +48,9 @@ const mapStateToProps = (state) => ({
     dataCountries: state.covidData.data
 });
 
-export default connect(mapStateToProps)(SearchList);
+const mapDispatchToProps = (dispatch) => ({
+    setData: (data) => dispatch(setCountry(data)),
+});
+  
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchList);

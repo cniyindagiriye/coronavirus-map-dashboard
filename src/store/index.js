@@ -3,10 +3,12 @@ import thunk from 'redux-thunk';
 
 import dataReducer from './reducers/data';
 import searchReducer from './reducers/search';
+import countryReducer from './reducers/country';
 
 const rootReducer = combineReducers({
     covidData: dataReducer,
     search: searchReducer,
+    country: countryReducer
 });
 
 const logger = store => {
