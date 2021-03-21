@@ -9,6 +9,9 @@
   background-color: #C4C4C4;
   height: max-content;
 }
+.App .country {
+  top: 0%;
+}
 .App .search{
   z-index: 1;
   position: fixed;

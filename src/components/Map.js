@@ -4,6 +4,7 @@ import 'leaflet/dist/leaflet.css';
 import { fetchData } from '../store/actions/data';
 import { connect } from 'react-redux';
 import { useEffect } from 'react';
+import Country from './Country';
 
 const Map = (props) => {
 
@@ -17,7 +18,8 @@ const Map = (props) => {
   const zoom = 4;
 
   return (
-    <div className="App-body bg-red-400">
+    <div className="App-body relative z-0 w-full bg-red-400">
+      <Country />
       <MapContainer center={location} zoom={zoom}>
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
       </MapContainer>
