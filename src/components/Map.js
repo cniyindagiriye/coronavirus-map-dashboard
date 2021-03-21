@@ -8,11 +8,12 @@ import { useEffect, useRef } from 'react';
 import treeMarker from '../assets/icons/marker-icon.png';
 import markerShadow from '../assets/icons/marker-shadow.png';
 import Country from './Country';
+import { setCountry } from '../store/actions/country';
 
 const Map = (props) => {
 
   const mapRef = useRef();
-  const { getData, data } = props;
+  const { getData, data, setData } = props;
 
   let geoJson;
 
@@ -37,7 +38,6 @@ const Map = (props) => {
           }
         };
       })};
-      console.log(geoJson);
     }
   }
 
@@ -67,12 +67,12 @@ const Map = (props) => {
 
         if ( !country ) return;
 
-        layer.bindPopup(`<p>${country}</p>`);
+        layer.bindPopup(`<p>${country}</p>`).on('click', () => setData(properties));
       }
     });
 
     parksGeojson.addTo(map);
-  }, [data, geoJson])
+  }, [data, geoJson, setData])
 
   useEffect(() => {
     getData();
@@ -98,6 +98,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   getData: (firstName, lastName, email, password) => 
   dispatch(fetchData(firstName, lastName, email, password)),
+  setData: (data) => dispatch(setCountry(data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Map);
