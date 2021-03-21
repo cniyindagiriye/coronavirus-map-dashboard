@@ -1,6 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import App from "../App";
+import store from "../store";
 
 jest.mock("react-dom", () => ({ render: jest.fn() }));
 
@@ -11,7 +13,7 @@ describe("Application root", () => {
     document.body.appendChild(div);
     require("../index.js");
     expect(ReactDOM.render).toHaveBeenCalledWith(<React.StrictMode>
-        <App />
+        <Provider store = {store}><App /></Provider>
       </React.StrictMode>, div);
   });
 });
