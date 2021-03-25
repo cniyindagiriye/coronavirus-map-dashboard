@@ -22,7 +22,7 @@ const Header = (props) => {
                     <div className="flex items-center border border-gray-600 md:w-1/2 bg-white p-0.5 rounded-sm shadow-lg">
                         <img src={searchIcon} alt="search" />
                         <input placeholder="Country" onChange={(event) => setCountry(event.target.value.trim()) } value={countryName} className="placeholder-blue-900 placeholder-opacity-50 capitalize w-full focus:outline-none mx-1 text-gray-700" type="text" />
-                        <button onClick={() => setCountry('')} className="focus:outline-none"><img src={clear} alt="search" /></button>
+                        <button onClick={() => setCountry('')} className={!countryName ? "hidden" : "focus:outline-none"}><img src={clear} alt="search" /></button>
                     </div>
                 </nav>
             </div>
