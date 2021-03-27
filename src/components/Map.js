@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 import { fetchData } from '../store/actions/data';
 import { connect } from 'react-redux';
 import { useEffect, useRef } from 'react';
-import treeMarker from '../assets/icons/marker-icon.png';
+import virusMarker from '../assets/icons/marker-icon.png';
 import markerShadow from '../assets/icons/marker-shadow.png';
 import Country from './Country';
 import { setCountry } from '../store/actions/country';
@@ -48,7 +48,7 @@ const Map = (props) => {
     if ( !map ) return;
 
     const parkIcon = new L.Icon({
-      iconUrl: treeMarker,
+      iconUrl: virusMarker,
       iconSize: [26, 26],
       popupAnchor: [0, -15],
       shadowUrl: markerShadow,
@@ -81,7 +81,7 @@ const Map = (props) => {
   return (
     <div className="App-body relative z-0 bg-red-400">
       <Country />
-      <MapContainer ref={mapRef} center={ [0, 0] } zoom={4}>
+      <MapContainer ref={mapRef} maxBounds={[[-85, -180.0],[85, 180.0]]} center={ [0, 0] } zoom={4} minZoom={2} maxZoom={8} scrollWheelZoom={false} >
         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution="&copy; <a href=&quot;https://www.openstreetmap.org/copyright&quot;>OpenStreetMap</a> contributors" />
       </MapContainer>
     </div>
