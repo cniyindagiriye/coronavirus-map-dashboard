@@ -26,3 +26,14 @@
   min-height: 80vh;
   z-index: 0;
 }
+.leaflet-control-container { position: absolute; right: 56px } 
+
+.bg-text{
+  background-color: #C4C4C4;
+}
+
+.select-filter{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}

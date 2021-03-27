@@ -11,7 +11,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.table-wrapper {
+  @apply mx-auto overflow-y-auto scrollbar-thin scrollbar-thumb-blue-700 scrollbar-track-blue-300 scrollbar-thumb-rounded;
+}
+
+.tdata {
+  @apply py-2 pl-2 font-mono text-xs text-gray-700 whitespace-pre border-t border-gray-200;
 }

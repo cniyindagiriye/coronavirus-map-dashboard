@@ -1,12 +1,7 @@
-import closeIcon from '../assets/icons/closeIcon.svg';
-import testIcon from '../assets/icons/testIcon.svg';
-import recoveredIcon from '../assets/icons/recoveredIcon.svg';
-import activeIcon from '../assets/icons/activeIcon.svg';
-import caseIcon from '../assets/icons/caseIcon.svg';
-import deathIcon from '../assets/icons/deathIcon.svg';
-import criticalIcon from '../assets/icons/criticalIcon.svg';
 import { connect } from 'react-redux';
 import { setCountry } from '../store/actions/country';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSkullCrossbones, faUserCheck, faBed, faProcedures, faVial, faMale, faVirus, faTimes } from "@fortawesome/free-solid-svg-icons";
 
 const Country = (props) => {
     const { data, setData } = props;
@@ -43,51 +38,64 @@ const Country = (props) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ");
     }
     return (
-        <div className={data === null ? "hidden" : "country my-4 rounded-sm shadow-md flex absolute z-10 bg-gray-300 w-11/12 sm:w-1/2 md:w-2/5 flex-col items-start"}>
+        <div className={data === null ? "hidden" : "country my-4 rounded-sm shadow-md flex absolute z-20 bg-gray-300 w-11/12 sm:w-1/2 md:w-2/5 flex-col items-start"}>
             <div className="px-2 py-4 w-full">
-                <button onClick={() => setData(null)} className="absolute right-2 top-2"><img src={closeIcon} alt="close" /></button>
+                <button onClick={() => setData(null)} className="absolute right-2 top-2"><FontAwesomeIcon icon={faTimes} className="text-gray-600 hover:text-gray-800 focus:outline-none text-2xl" /></button>
                 <div className="flex items-end">
-                    <img className="w-1/2 object-cover" src={countryInfo.flag} alt="flag" />
+                    <img className="w-1/4 h-1/4 object-cover" src={countryInfo.flag} alt="flag" />
                     <h1 className="ml-2 text-xl text-left mt-2 text-gray-800 pb-1 border-b border-gray-600">{country}</h1>
                 </div>
                 <div className="flex items-center justify-between py-2 mt-2">
-                    <div className="flex items-center">
-                        <img className="w-5 object-cover" src={caseIcon} alt="tests" />
+                    <div className="flex items-center w-1/2">
+                        <div className="flex w-1/6">
+                            <FontAwesomeIcon icon={faMale} className="text-gray-600 text-4xl" />
+                            <FontAwesomeIcon icon={faVirus} className="text-sm text-red-800" />
+                        </div>
                         <p className="ml-2 text-sm">Total cases</p>
                     </div>
                     <p className="text-sm text-gray-800">{numberWithCommas(cases) + "( +" + numberWithCommas(todayCases) + " )"}</p>
                 </div>
                 <div className="flex items-center justify-between py-2 border-t border-red-400">
-                    <div className="flex items-center">
-                        <img className="w-5 object-cover" src={activeIcon} alt="tests" />
+                    <div className="flex items-center w-1/2">
+                        <div className="flex w-1/6">
+                            <FontAwesomeIcon icon={faBed} className="text-gray-600 text-2xl" />
+                        </div>
                         <p className="ml-2 text-sm">Total active</p>
                     </div>
                     <p className="text-sm text-gray-800">{numberWithCommas(active)}</p>
                 </div>
                 <div className="flex items-center justify-between py-2 border-t border-red-400">
-                    <div className="flex items-center">
-                        <img className="w-5 object-cover" src={criticalIcon} alt="tests" />
+                    <div className="flex items-center w-1/2">
+                        <div className="flex w-1/6">
+                            <FontAwesomeIcon icon={faProcedures} className="text-gray-600 text-2xl" />
+                        </div>
                         <p className="ml-2 text-sm">Total critical</p>
                     </div>
                     <p className="text-sm text-gray-800">{numberWithCommas(critical)}</p>
                 </div>
                 <div className="flex items-center justify-between py-2 border-t border-red-400">
-                    <div className="flex items-center">
-                        <img className="w-5 object-cover" src={testIcon} alt="tests" />
+                    <div className="flex items-center w-1/2">
+                        <div className="flex w-1/6">
+                            <FontAwesomeIcon icon={faVial} className="text-gray-600 text-3xl" />
+                        </div>
                         <p className="ml-2 text-sm">Total tests</p>
                     </div>
                     <p className="text-sm text-gray-800">{numberWithCommas(tests)}</p>
                 </div>
                 <div className="flex items-center justify-between py-2 border-t border-red-400">
-                    <div className="flex items-center">
-                        <img className="w-5 object-cover" src={recoveredIcon} alt="tests" />
+                    <div className="flex items-center w-1/2">
+                        <div className="flex w-1/6">
+                            <FontAwesomeIcon icon={faUserCheck} className="text-gray-600 text-2xl" />
+                        </div>
                         <p className="ml-2 text-sm">Total recovered</p>
                     </div>
                     <p className="text-sm text-gray-800">{numberWithCommas(recovered) + "( +" + numberWithCommas(todayRecovered) + " )"}</p>
                 </div>
                 <div className="flex items-center justify-between py-2 border-t border-red-400">
-                    <div className="flex items-center">
-                        <img className="w-5 object-cover" src={deathIcon} alt="tests" />
+                    <div className="flex items-center w-1/2">
+                        <div className="flex w-1/6">
+                            <FontAwesomeIcon icon={faSkullCrossbones} className="text-gray-600 text-3xl" />
+                        </div>
                         <p className="ml-2 text-sm">Total deaths</p>
                     </div>
                     <p className="text-sm text-gray-800">{numberWithCommas(deaths) + "( +" + numberWithCommas(todayDeaths) + " )"}</p>
