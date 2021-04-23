@@ -38,7 +38,7 @@ const Country = (props) => {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ", ");
     }
     return (
-        <div className={data === null ? "hidden" : "country my-4 rounded-sm shadow-md flex absolute z-10 bg-gray-300 w-11/12 sm:w-1/2 md:w-2/5 flex-col items-start"}>
+        <div className={data === null ? "hidden" : "country my-4 rounded-sm shadow-md flex absolute z-20 bg-gray-300 w-11/12 sm:w-1/2 md:w-2/5 flex-col items-start"}>
             <div className="px-2 py-4 w-full">
                 <button onClick={() => setData(null)} className="absolute right-2 top-2"><FontAwesomeIcon icon={faTimes} className="text-gray-600 hover:text-gray-800 focus:outline-none text-2xl" /></button>
                 <div className="flex items-end">

@@ -27,3 +27,47 @@
   z-index: 0;
 }
 .leaflet-control-container { position: absolute; right: 56px } 
+
+.bg-text{
+  background-color: #C4C4C4;
+}
+
+.select-filter{
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.recovered{
+  --tw-text-opacity: 1;
+  background-color: rgba(5, 150, 105, var(--tw-text-opacity));
+  color: white;
+}
+
+.deaths, .todayDeaths {
+  --tw-text-opacity: 1;
+  background-color: rgba(220, 38, 38, var(--tw-text-opacity));
+  color: white;
+}
+
+.cases, .todayCases {
+  --tw-text-opacity: 1;
+  background-color: rgba(252, 211, 77, var(--tw-text-opacity));
+}
+
+.deaths, .todayDeaths {
+  --tw-text-opacity: 1;
+  background-color: rgba(220, 38, 38, var(--tw-text-opacity));
+  color: white;
+}
+
+.active {
+  --tw-bg-opacity: 1;
+  background-color: rgba(217, 119, 6, var(--tw-bg-opacity));
+  color: white;
+}
+
+.critical {
+  --tw-bg-opacity: 1;
+  background-color: rgba(252, 165, 165, var(--tw-bg-opacity));
+}
