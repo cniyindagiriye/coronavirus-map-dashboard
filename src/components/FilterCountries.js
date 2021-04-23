@@ -23,11 +23,11 @@ const FilterCountries = (props) => {
       <tr key={element.id} className="hover:bg-gray-300">
         <td className="tdata">{element.id+1}</td>
         <td className="tdata">{element.country}</td>
-        <td className="tdata">{numberWithCommas(element.cases) + "( +" + numberWithCommas(element.todayCases) + " )"}</td>
-        <td className="tdata">{numberWithCommas(element.active)}</td>
-        <td className="tdata">{numberWithCommas(element.critical)}</td>
-        <td className="tdata">{numberWithCommas(element.recovered) + "( +" + numberWithCommas(element.todayRecovered) + " )"}</td>
-        <td className="tdata">{numberWithCommas(element.deaths) + "( +" + numberWithCommas(element.todayDeaths) + " )"}</td>
+        <td className={`tdata ${!['cases', 'todayCases'].includes(sortKey) ? '' : sortKey }`}>{numberWithCommas(element.cases) + "( +" + numberWithCommas(element.todayCases) + " )"}</td>
+        <td className={`tdata ${sortKey !== 'active' ? '' : sortKey }`}>{numberWithCommas(element.active)}</td>
+        <td className={`tdata ${sortKey !== 'critical' ? '' : sortKey }`}>{numberWithCommas(element.critical)}</td>
+        <td className={`tdata ${sortKey !== 'recovered' ? '' : sortKey }`}>{numberWithCommas(element.recovered) + "( +" + numberWithCommas(element.todayRecovered) + " )"}</td>
+        <td className={`tdata ${!['deaths', 'todayDeaths'].includes(sortKey) ? '' : sortKey }`}>{numberWithCommas(element.deaths) + "( +" + numberWithCommas(element.todayDeaths) + " )"}</td>
         <td className="tdata">{numberWithCommas(element.tests)}</td>
       </tr>
     ));
@@ -44,11 +44,11 @@ const FilterCountries = (props) => {
             }} className={page.start <= 0 ? "hidden" : "focus:outline-none bg-blue-500 hover:bg-blue-600 text-gray-100 px-4 py-1 rounded-md"}>Previous</button>
           <button onClick={() => {
             setPage({ start: page.start + 10, end: page.end + 10 });
-            }} className={data.length <= page.end ? "hidden" : "focus:outline-none bg-blue-500 hover:bg-blue-600 text-gray-100 px-4 py-1 ml-8 rounded-md"}>Next</button>
+            }} className={data.length <= page.end ? "hidden" : "focus:outline-none bg-green-500 hover:bg-green-600 text-gray-100 px-4 py-1 ml-8 rounded-md"}>Next</button>
           <button onClick={() => {
             resetFilter('');
             setPage({ start: 0, end: 10 });
-          }} className="ml-12"><FontAwesomeIcon icon={faTimes} className="text-gray-600 hover:text-gray-800 focus:outline-none text-2xl" /></button>
+          }} className="ml-12"><FontAwesomeIcon icon={faTimes} className="text-gray-600 hover:text-red-800 focus:outline-none text-2xl" /></button>
         </div>
         <div className="table-wrapper mt-6 shadow bg-white text-gray-600 w-full">
           <table className="table-auto w-full text-left border-collapse">
